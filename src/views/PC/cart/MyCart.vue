@@ -116,7 +116,7 @@ export default {
         // 购物车无商品，支付失败
         this.$message({
           type:'warning',
-          message:'请先添加商品!'
+          message:'请先选择商品!'
         })
       } else {
         console.log(arr);

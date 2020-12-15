@@ -16,6 +16,7 @@
       </transition>
     </div>
     <!-- /定位购物车所用图片 -->
+    <!-- 商品详情 -->
     <div class="detail">
       <div class="core">
         <div class="top" style="display: flex">
@@ -228,8 +229,8 @@
                 <div v-html="goodsDeatail['详情HTML']"></div>
               </el-tab-pane>
               <el-tab-pane label="规格与包装">
-                <div style="color: #aaa">
-                  <div v-for="(item, index) in getCanshu" :key="index">
+                <div style="color: #aaa" class="sizeBox">
+                  <div style="width:350px" v-for="(item, index) in getCanshu" :key="index">
                     {{ item }}
                   </div>
                 </div>
@@ -243,6 +244,7 @@
         <!-- /底部部分 -->
       </div>
     </div>
+    <!-- /商品详情 -->
   </div>
 </template>
  
@@ -273,7 +275,8 @@ export default {
       return this.imgs[this.index];
     },
     getCanshu() {
-      return (this.goodsDeatail['商品基本参数'] || '').split('\n');
+      // 数组[0] 是一个空元素，所以需要splice(1),删去第一个元素
+      return (this.goodsDeatail['商品基本参数'] || '').split('\n').splice(1);
     },
     imgNum() {
       return this.imgs.length || 0;
@@ -342,10 +345,10 @@ export default {
         localStorage.setItem('users', JSON.stringify(users));
         this.$store.commit('updateUsers', users);
 
-        this.$message({
-          type: 'success',
-          message: '成功添加到购物车',
-        });
+        // this.$message({
+        //   type: 'success',
+        //   message: '成功添加到购物车',
+        // });
       }
     },
   },
@@ -419,6 +422,14 @@ export default {
 .rowBtn i {
   color: #ddd;
   font-size: 40px;
+}
+
+.sizeBox{
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .pic-box {

@@ -10,7 +10,7 @@
       </div>
       <div class="content">
         <div class="loginForm">
-          <img src="/static/images/login/bg.jpg" draggable="false" alt="图片" />
+          <img src="@/assets/bg.jpg" draggable="false" alt="图片" />
           <div class="core">
             <div class="title">
               <h2 v-if="isLogin">账号登陆</h2>

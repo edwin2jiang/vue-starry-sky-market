@@ -3,24 +3,19 @@
 > 项目名：starry-sky-market
 > 中文名：星空商城
 > 项目简介：基于vue全家桶+ElementUI的小型商城项目——星空商城。
-> 项目地址：https://xia_2.gitee.io/#/PC/index or 
+> 项目地址：https://xia_2.gitee.io/#/PC/index or  https://xia-2.github.io/#/PC/index
 
-
-
-## Build Setup
+## 运行流程
 
 ``` bash
-# install dependencies
-npm install
+# vue-cli @2.9.6
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 根据yarn.lock安装依赖
+yarn install
+# or npm install 不推荐使用
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+# 运行程序到 localhost:8080
+yarn run dev
+# or npm run dev 
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

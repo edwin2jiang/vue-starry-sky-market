@@ -37,9 +37,7 @@
           购物车
         </el-link>
         <span class="div"> | </span>
-        <el-link :underline="false" @click="toPage('/PC/index')"
-          >商城首页</el-link
-        >
+        <el-link :underline="false" @click="toIndex()">商城首页</el-link>
         <span class="div"> | </span>
         <el-link :underline="false" @click.native="helloUser()"
           >点我试试</el-link
@@ -68,6 +66,17 @@ import Cookies from 'js-cookie';
 export default {
   name: 'HeaderPart',
   methods: {
+    toIndex() {
+      if (this.$route.path === '/PC/index') {
+        this.$message({
+          type: 'info',
+          message: '您当前正在首页。',
+          showClose: true,
+        });
+      } else {
+        this.$router.push('/PC/index');
+      }
+    },
     toPage(item) {
       // console.log(item);
       this.$router.push(item);
