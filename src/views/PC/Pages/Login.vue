@@ -8,6 +8,7 @@
         </router-link>
         <h2>欢迎登录</h2>
       </div>
+      <!-- 登录面板 -->
       <div class="content">
         <div class="loginForm">
           <img src="@/assets/bg.jpg" draggable="false" alt="图片" />
@@ -123,6 +124,7 @@
           </div>
         </div>
       </div>
+      <!-- /登录面板 -->
       <my-footer />
     </div>
   </div>

@@ -18,12 +18,13 @@
             <div class="goods">
               <img
                 :src="getImg(scope.row['轮播图'])"
-                alt=""
+                alt="商品"
+                class="pointer"
                 width="120px"
                 height="120px"
+                @click="toPage('/PC/detail/'+scope.row['sku'])"
               />
               <span v-text="getTitle(scope.row['标题'])"> </span>
-              <!-- <span>{{ scope.row['标题'] }}</span> -->
             </div>
           </template>
         </el-table-column>
@@ -45,10 +46,15 @@
         </el-table-column>
         <el-table-column
           align="center"
-          prop="价格"
           label="小计"
           show-overflow-tooltip
         >
+          <template slot-scope="scope">
+            <span>
+              <span style="font-size:12px;"> ¥ </span> 
+              {{getValue(scope.$index)}}
+            </span>
+          </template>
         </el-table-column>
         <el-table-column align="center" label="操作" show-overflow-tooltip>
           <template slot-scope="scope">
@@ -72,7 +78,6 @@
           <div class="total inline-block">
             <span>总价：</span>
             <span> ¥ </span>
-            <!-- <span> 5000 </span> -->
             <span class="money">{{ totalValue }}</span>
           </div>
           <el-button @click="toPay()" type="primary" plain>
@@ -110,14 +115,20 @@ export default {
     };
   },
   methods: {
+    toPage(item){
+      this.$router.push(item);
+    },
+    getValue(index) {
+      return (this.tableData[index]['价格'] * this.tableData[index]['num']).toFixed(2);
+    },
     toPay() {
       let arr = this.$refs.multipleTable.selection;
       if (arr.length <= 0) {
         // 购物车无商品，支付失败
         this.$message({
-          type:'warning',
-          message:'请先选择商品!'
-        })
+          type: 'warning',
+          message: '请先选择商品!',
+        });
       } else {
         console.log(arr);
         this.$router.push({

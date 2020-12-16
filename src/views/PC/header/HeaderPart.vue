@@ -40,7 +40,7 @@
         <el-link :underline="false" @click="toIndex()">商城首页</el-link>
         <span class="div"> | </span>
         <el-link :underline="false" @click.native="helloUser()"
-          >点我试试</el-link
+          >开心果</el-link
         >
         <span class="div"> | </span>
         <el-popover
@@ -70,7 +70,7 @@ export default {
       if (this.$route.path === '/PC/index') {
         this.$message({
           type: 'info',
-          message: '您当前正在首页。',
+          message: '尊敬的用户，您当前正在首页。',
           showClose: true,
         });
       } else {

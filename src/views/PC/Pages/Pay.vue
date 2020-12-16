@@ -80,6 +80,7 @@
           <div class="bottom">
             收银台 | 结账
             <div class="core">
+              <!-- 支付面板 -->
               <el-card shadow="never">
                 <div>
                   <span>总计：</span>
@@ -100,6 +101,7 @@
                   <span>{{ address[radio]['phone'] }}</span>
                 </div>
               </el-card>
+              <!-- 支付面板 -->
               <div class="submitBtn">
                 <el-button type="primary" @click="submitPay()">
                   提交订单

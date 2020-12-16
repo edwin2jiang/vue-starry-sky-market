@@ -133,9 +133,11 @@ export default {
     },
     createFilter(queryString) {
       return (restaurant) => {
+        // 根据关键词生成正则表达式
         let patt = new RegExp(queryString.toLowerCase());
         // console.log (patt);
         // console.log (queryString.toLowerCase());
+        // 过滤返回出符合结果的数据
         return patt.test(restaurant.value.toLowerCase());
       };
     },

@@ -55,6 +55,7 @@ export default {
     toPage(item) {
       this.$router.push('/PC/detail/' + item.sku);
     },
+    // 滑动滚动条 - 实现自动加载
     scrollTo() {
       // 滚动视口高度(也就是当前元素的真实高度)
       let scrollHeight =
@@ -113,6 +114,7 @@ export default {
     // 创建加载监听器
     window.addEventListener('scroll', this.scrollTo);
   },
+  // 离开页面时候移除监听器
   destroyed() {
     // 监听用户离开当前页面，移除监听器
     console.log('首页-页面被销毁了');

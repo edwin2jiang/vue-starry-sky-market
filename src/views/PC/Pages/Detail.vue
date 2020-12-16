@@ -309,9 +309,9 @@ export default {
       // console.log(`translateX(${this.left + 20}px)`);
       if (this.left < 0) {
         this.$refs.innerBox.style['transform'] = `translateX(${
-          this.left + 30
+          this.left + 60
         }px)`;
-        this.left += 30;
+        this.left += 60;
       }
     },
     moveRight() {
@@ -319,9 +319,9 @@ export default {
       let minLeft = 0 - (this.imgNum - this.meanwhileNum) * this.imgWidth;
       if (minLeft < this.left) {
         this.$refs.innerBox.style['transform'] = `translateX(${
-          this.left - 30
+          this.left - 60
         }px)`;
-        this.left -= 30;
+        this.left -= 60;
       }
     },
     hoverImg(index) {
@@ -428,6 +428,11 @@ export default {
   opacity: 0;
   transform: scale(0.5);
   transform: translate(-965px, 780px);
+}
+
+.innerBox{
+  /* 加上线性过渡更加顺滑  */
+  transition:all 0.4s linear;
 }
 
 .rowBtn {
