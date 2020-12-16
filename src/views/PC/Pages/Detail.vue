@@ -66,9 +66,7 @@
               <div class="value">
                 <span class="label">秒杀价：</span>
                 <span class="rmb">¥</span>
-                <span>
-                  {{ goodsDeatail['价格'] }}
-                </span>
+                <span v-text="getPrice"> </span>
               </div>
               <div class="cuxiao">
                 <span class="label">促销品：</span>
@@ -106,16 +104,22 @@
             <div class="buyType">
               <div>
                 <span class="label"> 选择款式： </span>
-                <el-tag type="primary" size="small" effect="plain"
-                  >珊瑚蓝</el-tag
+                <span
+                  class="inline-block"
+                  v-for="(item, index) in tagList"
+                  :key="index"
+                  style="margin:0 8px 0 0"
                 >
-                <el-tag type="info" size="small" effect="plain"
-                  >官方标配</el-tag
-                >
-                <el-tag type="info" size="small" effect="plain">耀世金</el-tag>
-                <el-tag type="info" size="small" effect="plain">珊瑚蓝</el-tag>
-                <el-tag type="info" size="small" effect="plain">星空灰</el-tag>
+                  <el-tag
+                    :type="getTagType(index)"
+                    size="small"
+                    effect="plain"
+                    @click="switchTag(index)"
+                    >{{ item }}</el-tag
+                  >
+                </span>
               </div>
+              <!-- 增值服务 -->
               <div>
                 <span class="label"> 增值服务: </span>
                 <el-button size="mini">
@@ -131,6 +135,8 @@
                   一年换新</el-button
                 >
               </div>
+              <!-- /增值服务 -->
+              <!-- 白条分期 -->
               <div>
                 <span class="label"> 白条分期: </span>
                 <el-button size="mini">
@@ -150,6 +156,7 @@
                   ¥{{ getDivied(12) }}×12期
                 </el-button>
               </div>
+              <!-- /白条分期 -->
             </div>
 
             <el-divider></el-divider>
@@ -230,7 +237,11 @@
               </el-tab-pane>
               <el-tab-pane label="规格与包装">
                 <div style="color: #aaa" class="sizeBox">
-                  <div style="width:350px" v-for="(item, index) in getCanshu" :key="index">
+                  <div
+                    style="width: 350px"
+                    v-for="(item, index) in getCanshu"
+                    :key="index"
+                  >
                     {{ item }}
                   </div>
                 </div>
@@ -268,9 +279,14 @@ export default {
       left: 0,
       imgWidth: 60,
       meanwhileNum: 6,
+      tagIndex: 0,
+      tagList: ['官方标配', '珊瑚蓝', '耀世金', '星空灰', '梦幻粉'],
     };
   },
   computed: {
+    getPrice(item) {
+      return this.goodsDeatail['价格'] - 0 + this.tagIndex * 100 || 0;
+    },
     getMainImg() {
       return this.imgs[this.index];
     },
@@ -283,6 +299,12 @@ export default {
     },
   },
   methods: {
+    getTagType(index){
+      if (this.tagIndex === index){
+        return 'primary'
+      }
+      return 'info';
+    },
     moveLeft() {
       // console.log(`translateX(${this.left + 20}px)`);
       if (this.left < 0) {
@@ -350,6 +372,9 @@ export default {
         //   message: '成功添加到购物车',
         // });
       }
+    },
+    switchTag(index) {
+      this.tagIndex = index;
     },
   },
   // 加载出goodDetail信息
@@ -424,7 +449,7 @@ export default {
   font-size: 40px;
 }
 
-.sizeBox{
+.sizeBox {
   width: 800px;
   display: flex;
   flex-wrap: wrap;
