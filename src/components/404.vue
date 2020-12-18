@@ -19,7 +19,7 @@ import MyFooter from '../views/PC/footer/MyFooter.vue';
 import HeaderPart from '../views/PC/header/HeaderPart.vue';
 export default {
   components: { HeaderPart, MyFooter },
-  name: '404',
+  name: 'NotFound',
   methods:{
     goPageIndex(){
       this.$router.push('/PC/index')

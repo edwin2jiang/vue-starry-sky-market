@@ -15,7 +15,7 @@
             <el-col :span="12" :push="1">
               <el-row>
                 <el-col>
-                  <div style="margin-top: 4px">
+                  <div style="margin-top: 4px" @keyup.enter="search()">
                     <el-autocomplete
                       v-model="searchData"
                       :fetch-suggestions="querySearch"
@@ -27,6 +27,7 @@
                       <el-button
                         slot="append"
                         icon="el-icon-search"
+                        @click="search()"
                       ></el-button>
                     </el-autocomplete>
                   </div>
@@ -187,6 +188,9 @@ export default {
     handleSelect(item) {
       console.log(item);
       this;
+    },
+    search() {
+      this.$router.push(`/PC/search?q=${this.searchData}&page=1&size=10`);
     },
   },
   mounted() {

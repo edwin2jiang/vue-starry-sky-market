@@ -15,8 +15,4 @@ export default {
 
 <style>
 @import url('./assets/css/base.css');
-
-#app {
-  background-color: #f0f3f8;
-}
 </style>

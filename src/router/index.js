@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import notFound from '@/components/404'
+import NotFound from '@/components/404'
 Vue.use(Router)
 
 // 手机端
@@ -10,7 +10,6 @@ import mbRouter from './mb/index';
 // 电脑端
 const PC = () => import('@/views/PC/pc')
 import pcRouter from './pc/index';
-
 
 const routes = [{
     path: '/',
@@ -37,7 +36,7 @@ const routes = [{
     children: pcRouter
   }, {
     path: "/404",
-    component: notFound
+    component: NotFound
   }, {
     path: "*",
     redirect: "/404"

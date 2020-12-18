@@ -39,9 +39,7 @@
         <span class="div"> | </span>
         <el-link :underline="false" @click="toIndex()">商城首页</el-link>
         <span class="div"> | </span>
-        <el-link :underline="false" @click.native="helloUser()"
-          >开心果</el-link
-        >
+        <el-link :underline="false" @click.native="helloUser()">开心果</el-link>
         <span class="div"> | </span>
         <el-popover
           placement="top-start"

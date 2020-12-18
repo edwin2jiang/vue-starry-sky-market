@@ -4,6 +4,7 @@ import Login from 'PC/Pages/Login'
 import cart from 'PC/Pages/Cart'
 import pay from 'PC/Pages/Pay'
 import Cookies from 'js-cookie'
+import SearchResult from 'PC/Pages/SearchResult'
 
 const pcRouter = [{
   path: '',
@@ -18,6 +19,10 @@ const pcRouter = [{
   path: 'login',
   component: Login
 }, {
+  name: 'pcSearch',
+  path: 'search',
+  component: SearchResult
+}, {
   path: 'cart',
   component: cart,
   beforeEnter(to, from, next) {
@@ -29,7 +34,7 @@ const pcRouter = [{
     }
   }
 }, {
-  name:'pay',
+  name: 'pay',
   path: 'pay',
   component: pay,
   beforeEnter(to, from, next) {

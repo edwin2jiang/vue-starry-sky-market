@@ -3,11 +3,9 @@
     <div class="content">
       <el-row type="flex" align="middle" class="row">
         <el-col :span="4">
-          <router-link to="/PC/">
-            <div>
-              <img src="/static/logo.png" alt="" width="80px" height="80px" />
-            </div>
-          </router-link>
+          <div @click="toBack()" class="pointer">
+            <img src="/static/logo.png" alt="" width="80px" height="80px" />
+          </div>
         </el-col>
         <el-col :span="20">
           <!-- 搜索框第一行 -->
@@ -15,7 +13,7 @@
             <el-col :span="12" :push="1">
               <el-row>
                 <el-col>
-                  <div style="margin-top: 4px">
+                  <div style="margin-top: 4px" @keyup.enter="search()">
                     <el-autocomplete
                       v-model="searchData"
                       :fetch-suggestions="querySearch"
@@ -27,6 +25,7 @@
                       <el-button
                         slot="append"
                         icon="el-icon-search"
+                        @click="search()"
                       ></el-button>
                     </el-autocomplete>
                   </div>
@@ -164,6 +163,12 @@ export default {
     handleSelect(item) {
       console.log(item);
       this;
+    },
+    search() {
+      this.$router.push(`/PC/search?q=${this.searchData}&page=1&size=10`);
+    },
+    toBack() {
+      this.$router.go(-1);
     },
   },
   mounted() {

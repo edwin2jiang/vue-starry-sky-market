@@ -206,8 +206,6 @@ export default {
         center: true,
       })
         .then(() => {
-          // 清空购物车
-
           let users = JSON.parse(localStorage.getItem('users'));
           let userInfo = this.$store.state.userInfo;
           // 首先过滤出当前登录的用户
@@ -215,8 +213,20 @@ export default {
             return item['username'] === userInfo['username'];
           })[0];
           console.log(currentUser);
-          // 购物车数据置空
-          currentUser.carts = [];
+          // 购物车选择购买的元素清空
+
+          let flag;
+          currentUser.carts = currentUser.carts.filter(item=>{
+            flag = 0;
+            this.data.forEach(element =>{
+              if (element['sku'] === item['sku']){
+                flag = 1;
+              }
+            })
+            // flag一直为0，则说明没有被选择
+            return flag === 0 ? true :false;
+          })
+
           this.$store.state.userInfo = currentUser;
 
           let i = users.find((item) => item.username == userInfo['username']);

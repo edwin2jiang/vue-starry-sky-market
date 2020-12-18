@@ -6,4 +6,7 @@ export default {
   getUserInfo(state){
     return localStorage.getItem("userInfo") || null;
   },
+  getGoodsList(state){
+    return state.goodsList;
+  }
 }

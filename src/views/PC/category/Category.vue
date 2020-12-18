@@ -39,12 +39,13 @@
 </template>
  
 <script>
-import lists from './category.config'
+import lists from './category.config';
+// 非硬编码 || 这里这是为了减少白屏时间，在beforeCreate里面会进行接口请求到分类数据
 export default {
   name: 'Category',
   data() {
     return {
-      lists
+      lists,
     };
   },
   methods: {
@@ -58,6 +59,19 @@ export default {
       this.$refs['subCard_' + index][0].classList.remove('active');
       this.$refs['Card_' + index][0].classList.remove('active');
     },
+  },
+  beforeCreate() {
+    this.$axios({
+      type: 'get',
+      url: '/static/data/category-config.json',
+    })
+      .then((res) => {
+        console.log(res);
+        this.lists = res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
 </script>

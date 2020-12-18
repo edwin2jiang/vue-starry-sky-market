@@ -4,7 +4,7 @@ export default {
   increaseCount(state) {
     state.count += 5;
   },
-  updateUsers(state,users){
+  updateUsers(state, users) {
     state.users = users;
   },
   login(state, userInfo) {
