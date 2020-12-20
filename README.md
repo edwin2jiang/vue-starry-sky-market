@@ -4,15 +4,15 @@
 >
 > 中文名：星空商城
 >
-> 项目简介：基于vue全家桶+ElementUI的小型商城项目——星空商城。
+> 项目简介：基于**vue全家桶+ElementUI**的小型商城项目——星空商城。
 >
 > 演示地址：https://xia_2.gitee.io/#/PC/index or  https://xia-2.github.io/#/PC/index
 >
 > 项目地址：https://github.com/xia-2/xia-2.github.io
 >
-> **建议直接访问上述项目地址，不建议直接双击/dist/index.html**
+> **建议直接访问上述演示地址，不建议直接双击/dist/index.html**
 
-## 🎯项目依赖
+## 🛰项目依赖
 
 | **软件环境**            | **简介**                                        |
 | ----------------------- | ----------------------------------------------- |
@@ -28,7 +28,7 @@
 | **Js-Cookie: v2.2.1**   | 对原生cookie的封装插件。                        |
 | **Mockjs: v1.1.0**      | 生成随机数据，拦截 Ajax 请求工具。              |
 
-## 🎯运行流程
+## 🎁运行流程
 
 ``` bash
 # vue-cli @2.9.6
@@ -41,3 +41,23 @@ yarn install
 yarn run dev
 # or npm run dev 
 ```
+
+## 🎉登录使用
+
+> 账号：root 
+>
+> 密码：123456
+
+## 🍬界面展示
+
+![登录页面](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214613529.png![image-20201220214624974](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214624974.png)
+
+
+
+![首页](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214704610.png)
+
+![购物车](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214720343.png)
+
+![支付页面](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214733894.png)
+
+![搜索界面](http://imgbed-xia-2.oss-cn-hangzhou.aliyuncs.com/img/image-20201220214757960.png)
