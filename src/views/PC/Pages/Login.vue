@@ -137,13 +137,13 @@ export default {
   components: { MyFooter, HeaderPart },
   name: 'Login',
   data() {
-    var checkUsername = (rule, value, callback) => {
+    let checkUsername = (rule, value, callback) => {
       if (!value) {
         return callback(new Error('用户名不能为空'));
       }
       callback();
     };
-    var validatePass = (rule, value, callback) => {
+    let validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入密码'));
       } else {
@@ -153,7 +153,7 @@ export default {
         callback();
       }
     };
-    var validatePass2 = (rule, value, callback) => {
+    let validatePass2 = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请再次输入密码'));
       } else if (value !== this.regForm.password) {

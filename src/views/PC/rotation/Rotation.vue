@@ -2,7 +2,7 @@
   <el-carousel
     :interval="5000"
     arrow="always"
-    style="display: inline-block; width: 590px;height: 470px;"
+    style="display: inline-block; width: 590px; height: 470px"
   >
     <el-carousel-item v-for="item in imgs" :key="item">
       <el-image

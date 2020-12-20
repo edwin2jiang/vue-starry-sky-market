@@ -216,16 +216,16 @@ export default {
           // 购物车选择购买的元素清空
 
           let flag;
-          currentUser.carts = currentUser.carts.filter(item=>{
+          currentUser.carts = currentUser.carts.filter((item) => {
             flag = 0;
-            this.data.forEach(element =>{
-              if (element['sku'] === item['sku']){
+            this.data.forEach((element) => {
+              if (element['sku'] === item['sku']) {
                 flag = 1;
               }
-            })
+            });
             // flag一直为0，则说明没有被选择
-            return flag === 0 ? true :false;
-          })
+            return flag === 0 ? true : false;
+          });
 
           this.$store.state.userInfo = currentUser;
 

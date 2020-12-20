@@ -108,7 +108,7 @@
                   class="inline-block"
                   v-for="(item, index) in tagList"
                   :key="index"
-                  style="margin:0 8px 0 0"
+                  style="margin: 0 8px 0 0"
                 >
                   <el-tag
                     :type="getTagType(index)"
@@ -299,9 +299,9 @@ export default {
     },
   },
   methods: {
-    getTagType(index){
-      if (this.tagIndex === index){
-        return 'primary'
+    getTagType(index) {
+      if (this.tagIndex === index) {
+        return 'primary';
       }
       return 'info';
     },
@@ -400,7 +400,7 @@ export default {
         let arr = str.split('/\r\n');
         arr[arr.length - 1] = arr[arr.length - 1].substring(
           0,
-          arr[arr.length - 1].length - 1
+          arr[arr.length - 1].length - 1,
         );
         // console.log(arr);
         this.imgs = arr;
@@ -430,9 +430,9 @@ export default {
   transform: translate(-965px, 780px);
 }
 
-.innerBox{
+.innerBox {
   /* 加上线性过渡更加顺滑  */
-  transition:all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .rowBtn {

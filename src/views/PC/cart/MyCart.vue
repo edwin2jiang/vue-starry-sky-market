@@ -22,7 +22,7 @@
                 class="pointer"
                 width="120px"
                 height="120px"
-                @click="toPage('/PC/detail/'+scope.row['sku'])"
+                @click="toPage('/PC/detail/' + scope.row['sku'])"
               />
               <span v-text="getTitle(scope.row['标题'])"> </span>
             </div>
@@ -44,15 +44,11 @@
             ></el-input-number>
           </template>
         </el-table-column>
-        <el-table-column
-          align="center"
-          label="小计"
-          show-overflow-tooltip
-        >
+        <el-table-column align="center" label="小计" show-overflow-tooltip>
           <template slot-scope="scope">
             <span>
-              <span style="font-size:12px;"> ¥ </span> 
-              {{getValue(scope.$index)}}
+              <span style="font-size: 12px"> ¥ </span>
+              {{ getValue(scope.$index) }}
             </span>
           </template>
         </el-table-column>
@@ -115,11 +111,13 @@ export default {
     };
   },
   methods: {
-    toPage(item){
+    toPage(item) {
       this.$router.push(item);
     },
     getValue(index) {
-      return (this.tableData[index]['价格'] * this.tableData[index]['num']).toFixed(2);
+      return (
+        this.tableData[index]['价格'] * this.tableData[index]['num']
+      ).toFixed(2);
     },
     toPay() {
       let arr = this.$refs.multipleTable.selection;

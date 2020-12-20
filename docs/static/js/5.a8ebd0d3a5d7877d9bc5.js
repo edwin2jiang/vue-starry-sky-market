@@ -1,0 +1,2 @@
+webpackJsonp([5],{EhqZ:function(t,e){},q7Gu:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={name:"Cart",data:function(){return{imgUrl:"/static/cslg_logo.jpg"}}},a={render:function(){var t=this.$createElement;return(this._self._c||t)("h2",[this._v("购物车")])},staticRenderFns:[]};var c=n("VU/8")(r,a,!1,function(t){n("EhqZ")},"data-v-0538e465",null);e.default=c.exports}});
+//# sourceMappingURL=5.a8ebd0d3a5d7877d9bc5.js.map

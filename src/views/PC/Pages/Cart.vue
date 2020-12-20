@@ -2,7 +2,7 @@
   <div>
     <header-part />
     <search-simple />
-    <my-cart/>
+    <my-cart />
     <my-footer />
   </div>
 </template>
@@ -14,7 +14,7 @@ import SearchSimple from 'PC/search/SearchSimple.vue';
 import MyCart from 'PC/cart/myCart.vue';
 
 export default {
-  components: { HeaderPart, MyFooter, SearchSimple,MyCart,},
+  components: { HeaderPart, MyFooter, SearchSimple, MyCart },
   name: 'Cart',
 };
 </script>

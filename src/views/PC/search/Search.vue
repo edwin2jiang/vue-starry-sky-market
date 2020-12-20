@@ -125,8 +125,8 @@ export default {
   },
   methods: {
     querySearch(queryString, cb) {
-      var restaurants = this.restaurants;
-      var results = queryString
+      let restaurants = this.restaurants;
+      let results = queryString
         ? restaurants.filter(this.createFilter(queryString))
         : restaurants;
       // 调用 callback 返回建议列表的数据

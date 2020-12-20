@@ -12,12 +12,12 @@
  
 <script>
 export default {
-  name: "TabBarItem",
-  props: ["item", "colorActive"],
+  name: 'TabBarItem',
+  props: ['item', 'colorActive'],
   data() {
     return {
       icon: this.item.icon,
-      iconActive:this.item.iconActive
+      iconActive: this.item.iconActive,
     };
   },
   methods: {
@@ -25,7 +25,7 @@ export default {
       this.$router.replace(
         this.item.path,
         (onComplete) => {},
-        (onAbort) => {}
+        (onAbort) => {},
       );
     },
   },
@@ -34,8 +34,8 @@ export default {
       return this.$route.path === this.item.path;
     },
     color() {
-      const colorSelect = this.colorActive || "blue";
-      return this.isActive ? "color:" + colorSelect : "";
+      const colorSelect = this.colorActive || 'blue';
+      return this.isActive ? 'color:' + colorSelect : '';
     },
   },
 };

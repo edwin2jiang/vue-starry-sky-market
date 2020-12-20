@@ -1,12 +1,12 @@
 export default {
   // computed
-  getStoreCount(state){
+  getStoreCount(state) {
     return state.count;
   },
-  getUserInfo(state){
-    return localStorage.getItem("userInfo") || null;
+  getUserInfo(state) {
+    return localStorage.getItem('userInfo') || null;
   },
-  getGoodsList(state){
+  getGoodsList(state) {
     return state.goodsList;
-  }
-}
+  },
+};

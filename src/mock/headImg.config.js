@@ -7,6 +7,6 @@ const arr = [
   '/static/images/headImg/5.jpg',
   '/static/images/headImg/6.jpg',
   '/static/images/headImg/7.jpg',
-]
+];
 
 export default arr;

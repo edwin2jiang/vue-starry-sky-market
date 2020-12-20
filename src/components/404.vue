@@ -7,7 +7,9 @@
       </div>
       <div class="btnArea">
         <h1>this is 404 page!</h1>
-        <el-button type="primary" plain size="large" @click="goPageIndex"> 返回首页 </el-button>
+        <el-button type="primary" plain size="large" @click="goPageIndex">
+          返回首页
+        </el-button>
       </div>
     </div>
     <my-footer />
@@ -20,11 +22,11 @@ import HeaderPart from '../views/PC/header/HeaderPart.vue';
 export default {
   components: { HeaderPart, MyFooter },
   name: 'NotFound',
-  methods:{
-    goPageIndex(){
-      this.$router.push('/PC/index')
-    }
-  }
+  methods: {
+    goPageIndex() {
+      this.$router.push('/PC/index');
+    },
+  },
 };
 </script>
 
@@ -37,14 +39,14 @@ export default {
   align-items: center;
 }
 
-.btnArea{
+.btnArea {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.btnArea h1{
+.btnArea h1 {
   margin: 10px 0;
 }
 </style>

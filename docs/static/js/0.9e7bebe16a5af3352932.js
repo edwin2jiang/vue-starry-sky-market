@@ -1,2 +1,0 @@
-webpackJsonp([0],{bbCv:function(t,e){},q7Gu:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={name:"Cart",data:function(){return{imgUrl:"/static/cslg_logo.jpg"}}},a={render:function(){var t=this.$createElement;return(this._self._c||t)("h2",[this._v("购物车\n")])},staticRenderFns:[]};var c=n("VU/8")(r,a,!1,function(t){n("bbCv")},"data-v-fde98610",null);e.default=c.exports}});
-//# sourceMappingURL=0.9e7bebe16a5af3352932.js.map
