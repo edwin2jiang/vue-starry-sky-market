@@ -1,10 +1,15 @@
 ## 🎯项目简介
 
 > 项目名：starry-sky-market
+>
 > 中文名：星空商城
+>
 > 项目简介：基于vue全家桶+ElementUI的小型商城项目——星空商城。
+>
 > 演示地址：https://xia_2.gitee.io/#/PC/index or  https://xia-2.github.io/#/PC/index
+>
 > 项目地址：https://github.com/xia-2/xia-2.github.io
+>
 > **建议直接访问上述项目地址，不建议直接双击/dist/index.html**
 
 ## 🎯项目依赖
