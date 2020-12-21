@@ -7,10 +7,12 @@ import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios';
+import VueCookies from 'vue-cookies';
 
 // 全局引入 mock api，这一行是有作用的，请勿删除
 import mock from '@/mock/index.js';
 
+Vue.use(VueCookies);
 Vue.use(ElementUI);
 Vue.prototype.$axios = axios;
 

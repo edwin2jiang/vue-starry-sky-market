@@ -17,6 +17,7 @@
     "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",
     "vue": "^2.5.2",
+    "vue-cookies": "^1.7.4",
     "vue-piczoom": "^1.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.6.0"

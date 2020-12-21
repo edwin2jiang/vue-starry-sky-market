@@ -86,6 +86,7 @@ export default {
           message: '恭喜你, 登录成功',
           type: 'success',
         });
+
         state.userInfo = newArr[0];
 
         console.log('----------------');
@@ -95,7 +96,9 @@ export default {
         Cookies.set('isLogin', 'true', {
           expires: 7,
         });
-        // info.that.$router.push('/PC/index');
+
+        // window.$cookies.set('userInfo', 'JSON.stringify(newArr[0])', '7d');
+
         info.that.$router.go(-1);
         return true;
       }

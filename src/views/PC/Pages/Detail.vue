@@ -188,7 +188,7 @@
         <!-- 底部部分 -->
         <div class="bottom">
           <div class="shopCard">
-            <el-card shadow="hover" body-style="padding:2px">
+            <el-card shadow="hover" body-style="padding:0px">
               <div class="shopTitle">
                 {{ goodsDeatail['店铺名称'] || '常开泰达手机店' }}
               </div>
@@ -216,14 +216,13 @@
                   <span class="comment">9.39 高</span>
                 </div>
               </div>
-              <el-divider></el-divider>
-
-              <div class="allCenter" style="padding-bottom: 20px">
-                <el-button type="info" plain size="small">
+              <el-divider />
+              <div class="allCenter" style="padding: 0 4px 20px">
+                <el-button size="small" round>
                   <i class="el-icon-shopping-bag-2"></i>
                   进店逛逛
                 </el-button>
-                <el-button type="info" plain size="small">
+                <el-button size="small" round>
                   <i class="el-icon-star-on"></i>
                   关注店铺
                 </el-button>
@@ -356,7 +355,23 @@ export default {
           return item['username'] === userInfo['username'];
         })[0];
         console.log(currentUser);
-        currentUser.carts.push(item);
+
+        // 检索该用户是否已经将该商品加入购物车
+        let res = this.isHaveThisGoods(currentUser, item);
+        console.log(res);
+        if (res) {
+          let carts = currentUser.carts;
+          for (let i = 0; i < carts.length; i++) {
+            if (carts[i]['sku'] === item['sku']) {
+              carts[i]['num'] += item['num'];
+            }
+          }
+          console.log(currentUser.carts);
+          currentUser.carts = carts;
+        } else {
+          currentUser.carts.push(item);
+        }
+
         this.$store.state.userInfo = currentUser;
 
         let i = users.find((item) => item.username == userInfo['username']);
@@ -366,15 +381,20 @@ export default {
         // 更新本地存储和state中的值
         localStorage.setItem('users', JSON.stringify(users));
         this.$store.commit('updateUsers', users);
-
-        // this.$message({
-        //   type: 'success',
-        //   message: '成功添加到购物车',
-        // });
       }
     },
     switchTag(index) {
       this.tagIndex = index;
+    },
+    isHaveThisGoods(user, goods) {
+      let arr = user.carts.filter((item) => {
+        return item['sku'] === goods['sku'];
+      });
+      console.log(arr);
+      if (arr.length === 0) {
+        return false;
+      }
+      return true;
     },
   },
   // 加载出goodDetail信息
@@ -570,10 +590,9 @@ export default {
 
 .shopCard {
   width: 210px;
-  height: 230px;
+  height: 250px;
   margin-right: 60px;
-  border-radius: 8px;
-  /* border: 1px solid #eee; */
+  border-radius: 10px;
   background: #fff;
   color: #999;
 }

@@ -119,6 +119,7 @@ export default {
       if (this.$store.state.userInfo === null) {
         return 0;
       } else {
+        console.log (this.$store.state.userInfo);
         return this.$store.state.userInfo.carts.length || 0;
       }
     },
@@ -157,7 +158,6 @@ export default {
     },
     handleSelect(item) {
       console.log(item);
-      this;
     },
     search() {
       this.$router.push(`/PC/search?q=${this.searchData}&page=1&size=10`);

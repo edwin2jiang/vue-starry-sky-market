@@ -132,7 +132,6 @@ export default {
     },
     handleSelect(item) {
       console.log(item);
-      this;
     },
     search() {
       this.$router.push(`/PC/search?q=${this.searchData}&page=1&size=10`);

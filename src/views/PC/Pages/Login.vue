@@ -193,7 +193,6 @@ export default {
     submitLogin(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          // alert('登录成功!');
           this.checkLogin(this.loginForm);
         } else {
           console.log('error submit!!');

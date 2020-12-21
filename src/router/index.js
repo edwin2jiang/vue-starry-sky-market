@@ -46,6 +46,7 @@ const routes = [
   },
 ];
 
+// 消除跳转同一个页面报错
 const originalPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch((err) => err);
