@@ -74,7 +74,7 @@ export default {
       return (item) => {
         let str = item['轮播图'];
         let arr = str.split('/\r\n');
-        return arr[0];
+        return arr[0] || '/static/images/picNotFound.jpg';
       };
     },
     currentPage() {

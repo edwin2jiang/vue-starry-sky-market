@@ -40,7 +40,6 @@
  
 <script>
 import lists from './category.config';
-// 非硬编码 || 这里这是为了减少白屏时间，在beforeCreate里面会进行接口请求到分类数据
 export default {
   name: 'Category',
   data() {
