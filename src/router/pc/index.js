@@ -1,10 +1,11 @@
-import detail from 'PC/Pages/Detail';
-import index from 'PC/Pages/Index';
-import Login from 'PC/Pages/Login';
-import cart from 'PC/Pages/Cart';
-import pay from 'PC/Pages/Pay';
 import Cookies from 'js-cookie';
-import SearchResult from 'PC/Pages/SearchResult';
+
+const detail = () => import('PC/Pages/Detail');
+const index = () => import('PC/Pages/Index');
+const Login = () => import('PC/Pages/Login');
+const cart = () => import('PC/Pages/Cart');
+const pay = () => import('PC/Pages/Pay');
+const SearchResult = () => import('PC/Pages/SearchResult');
 
 const pcRouter = [
   {
