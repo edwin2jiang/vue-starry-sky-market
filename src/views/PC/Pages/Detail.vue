@@ -590,7 +590,7 @@ export default {
 
 .shopCard {
   width: 210px;
-  height: 250px;
+  height: 230px;
   margin-right: 60px;
   border-radius: 10px;
   background: #fff;
