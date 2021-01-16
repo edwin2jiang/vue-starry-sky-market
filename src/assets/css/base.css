@@ -61,13 +61,25 @@
   letter-spacing: -5px;
 }
 
-.inlineBlockNoSpace>* {
+.inlineBlockNoSpace > * {
   letter-spacing: 0;
 }
 
-.verticalCenter{
+.verticalCenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: space-around;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }

@@ -29,11 +29,13 @@ export default {
   display: flex;
   justify-content: space-around;
   position: fixed;
+  background: #fff;
   left: 0;
   bottom: 0;
   right: 0;
   height: 49px;
   padding: 2px 0;
   box-shadow: 0 -2px 2px #ccc;
+  z-index: 999;
 }
 </style>

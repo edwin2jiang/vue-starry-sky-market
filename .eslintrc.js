@@ -30,7 +30,7 @@ module.exports = {
       },
     ],
     'no-var': ['error'],
-    semi: ['error', 'always'],
+    // semi: ['error', 'always'],
     quotes: ['error', 'single'],
     indent: ['error', 2],
   },
